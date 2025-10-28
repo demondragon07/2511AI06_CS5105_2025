@@ -1,0 +1,30 @@
+2025-10-28 13:33:01,639 | INFO | CSV file uploaded successfully: input_btp_mtp_allocation.csv
+2025-10-28 13:33:01,648 | INFO | Starting student allocation process.
+2025-10-28 13:33:01,649 | INFO | Detected 18 faculty columns and 90 students.
+2025-10-28 13:33:01,673 | INFO | Allocation completed for 90 students.
+2025-10-28 13:33:01,677 | INFO | Preparing faculty preference statistics.
+2025-10-28 13:33:01,696 | INFO | Faculty preference statistics generated successfully.
+2025-10-28 13:33:16,573 | INFO | CSV file uploaded successfully: input_btp_mtp_allocation.csv
+2025-10-28 13:33:16,578 | INFO | Starting student allocation process.
+2025-10-28 13:33:16,578 | INFO | Detected 18 faculty columns and 90 students.
+2025-10-28 13:33:16,596 | INFO | Allocation completed for 90 students.
+2025-10-28 13:33:16,598 | INFO | Preparing faculty preference statistics.
+2025-10-28 13:33:16,617 | INFO | Faculty preference statistics generated successfully.
+2025-10-28 13:33:27,003 | INFO | CSV file uploaded successfully: input_btp_mtp_allocation.csv
+2025-10-28 13:33:27,008 | INFO | Starting student allocation process.
+2025-10-28 13:33:27,008 | INFO | Detected 18 faculty columns and 90 students.
+2025-10-28 13:33:27,029 | INFO | Allocation completed for 90 students.
+2025-10-28 13:33:27,032 | INFO | Preparing faculty preference statistics.
+2025-10-28 13:33:27,051 | INFO | Faculty preference statistics generated successfully.
+2025-10-28 09:32:36,797 | INFO | CSV file uploaded successfully: input_btp_mtp_allocation.csv
+2025-10-28 09:32:36,828 | INFO | Starting student allocation process.
+2025-10-28 09:32:36,829 | INFO | Detected 18 faculty columns and 90 students.
+2025-10-28 09:32:36,856 | INFO | Allocation completed for 90 students.
+2025-10-28 09:32:36,861 | INFO | Preparing faculty preference statistics.
+2025-10-28 09:32:36,899 | INFO | Faculty preference statistics generated successfully.
+2025-10-28 15:04:37,024 | INFO | CSV file uploaded successfully: input_btp_mtp_allocation.csv
+2025-10-28 15:04:37,064 | INFO | Starting student allocation process.
+2025-10-28 15:04:37,065 | INFO | Detected 18 faculty columns and 90 students.
+2025-10-28 15:04:37,092 | INFO | Allocation completed for 90 students.
+2025-10-28 15:04:37,098 | INFO | Preparing faculty preference statistics.
+2025-10-28 15:04:37,110 | INFO | Faculty preference statistics generated successfully.
