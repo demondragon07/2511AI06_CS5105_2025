@@ -43,6 +43,11 @@ Ensure your project folder contains these files:
 
 ---
 
+## Sample
+![attendance system sample](https://github.com/user-attachments/assets/25fd8ff7-a2a4-4bab-b115-a236694cafe8)
+
+---
+
 ## How to Run
 
 ### Method 1: Using Docker (Recommended)
@@ -195,4 +200,5 @@ Result: Students remain on the same building and adjacent floors.
 For academic and institutional use.
 
 ---
+
 
