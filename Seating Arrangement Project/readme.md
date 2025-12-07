@@ -1,32 +1,30 @@
-# Automated Exam Seating Arrangement System
-
 ## Project Overview
-This project is a comprehensive Python-based solution designed to automate the scheduling and allocation of university exams. It transforms raw input data (Timetables, Student Rolls, Room Capacities) into optimized seating plans and generates print-ready **Attendance Sheets (PDF)** with student photos.
+This project is a comprehensive Python-based solution designed to automate the scheduling and allocation of university exams. It transforms raw input data (Timetables, Student Rolls, Room Capacities) into optimized seating plans and generates print-ready *Attendance Sheets (PDF)* with student photos.
 
-The system is containerized using **Docker** to ensure it runs perfectly on any machine and features a user-friendly **Streamlit** web interface.
+The system is containerized using *Docker* to ensure it runs perfectly on any machine and features a user-friendly *Streamlit* web interface.
 
 ### Key Features
-* **Optimized Allocation:** Uses a **"Linear Block Affinity"** algorithm to minimize student and faculty movement between buildings (e.g., Block 1 to Block 9).
-* **Conflict Detection:** Automatically checks for and prevents scheduling clashes (same student, multiple exams in one slot).
-* **Smart Capacity:** Handles **'Sparse'** (50% density) vs **'Dense'** (100% density) seating modes with configurable safety buffers.
-* **PDF Generation:** Auto-generates A4 attendance sheets with student photos, merged headers, and static invigilator signature blocks.
-* **Robustness:** Handles missing photos or data gracefully without crashing.
+* *Optimized Allocation:* Uses a *"Linear Block Affinity"* algorithm to minimize student and faculty movement between buildings (e.g., Block 1 to Block 9).
+* *Conflict Detection:* Automatically checks for and prevents scheduling clashes (same student, multiple exams in one slot).
+* *Smart Capacity:* Handles *'Sparse'* (50% density) vs *'Dense'* (100% density) seating modes with configurable safety buffers.
+* *PDF Generation:* Auto-generates A4 attendance sheets with student photos, merged headers, and static invigilator signature blocks.
+* *Robustness:* Handles missing photos or data gracefully without crashing.
 
 ---
 
 ## Tech Stack
-* **Language:** Python 3.10
-* **Interface:** Streamlit
-* **Data Processing:** Pandas, NumPy, OpenPyXL
-* **PDF Generation:** ReportLab
-* **Containerization:** Docker
+* *Language:* Python 3.10
+* *Interface:* Streamlit
+* *Data Processing:* Pandas, NumPy, OpenPyXL
+* *PDF Generation:* ReportLab
+* *Containerization:* Docker
 
 ---
 
 ## Project Structure
 Ensure your project folder contains these files:
 
-```text
+text
 /project-root
 ├── app.py                 # Main Streamlit application (Entry Point)
 ├── logic.py               # Core algorithms (Clash detection, Allocation logic)
@@ -38,6 +36,14 @@ Ensure your project folder contains these files:
 ├── requirements.txt       # Python dependencies list
 └── Dockerfile             # Docker image configuration
 
+---
+
+## Video Demonstration Link
+
+([Click Here](https://youtu.be/DR00VIIeYfM))
+
+---
+
 ## How to Run
 
 ### Method 1: Using Docker (Recommended)
@@ -46,17 +52,17 @@ This method ensures the application runs without manually installing Python or d
 
 ### 1. Build the Docker Image
 
-```bash
+bash
 docker build -t student-management-system .
-```
+
 
 ---
 
 ### 2. Run the Container
 
-```bash
+bash
 docker run -p 8501:8501 student-management-system
-```
+
 
 ---
 
@@ -64,32 +70,32 @@ docker run -p 8501:8501 student-management-system
 
 Open your browser:
 
-```
+
 http://localhost:8501
-```
+
 
 ---
 
 ## Method 2: Manual Python Execution
 
 ### 1. Install Python
-Ensure **Python 3.10+** is installed.
+Ensure *Python 3.10+* is installed.
 
 ---
 
 ### 2. Install Dependencies
 
-```bash
+bash
 pip install -r requirements.txt
-```
+
 
 ---
 
 ### 3. Run the App
 
-```bash
+bash
 streamlit run app.py
-```
+
 
 ---
 
@@ -97,8 +103,8 @@ streamlit run app.py
 
 ### Configure Settings (Sidebar)
 
-- **Buffer:** Empty seats per room
-- **Density:**
+- *Buffer:* Empty seats per room
+- *Density:*
   - Dense → Near full capacity
   - Sparse → ~50% capacity
 
@@ -113,17 +119,17 @@ Must contain:
 - Room Capacities
 
 #### photos.zip
-- Format: `<ROLL_NUMBER>.jpg`
+- Format: <ROLL_NUMBER>.jpg
 
 ---
 
 ###  Generate
-Click **Generate Seating Arrangement**
+Click *Generate Seating Arrangement*
 
 ---
 
 ### Download
-Click **Download Output (ZIP)**
+Click *Download Output (ZIP)*
 
 ---
 
@@ -137,14 +143,14 @@ Room capacity utilization report.
 
 ### Attendance PDFs
 Location:
-```
+
 Output > [Date] > [Session]
-```
+
 
 Format:
-```
+
 YYYY_MM_DD_Session_Room_Subject.pdf
-```
+
 
 - A4 size
 - 3-column photo grid
@@ -190,5 +196,3 @@ Result: Students remain on the same building and adjacent floors.
 For academic and institutional use.
 
 ---
-
-✅ Ready for production deployment.
