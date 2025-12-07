@@ -23,8 +23,7 @@ The system is containerized using *Docker* to ensure it runs perfectly on any ma
 
 ## Project Structure
 Ensure your project folder contains these files:
-
-text
+```
 /project-root
 ├── app.py                 # Main Streamlit application (Entry Point)
 ├── logic.py               # Core algorithms (Clash detection, Allocation logic)
@@ -35,7 +34,7 @@ text
 ├── utils.py               # Logging configuration
 ├── requirements.txt       # Python dependencies list
 └── Dockerfile             # Docker image configuration
-
+```
 ---
 
 ## Video Demonstration Link
@@ -196,3 +195,4 @@ Result: Students remain on the same building and adjacent floors.
 For academic and institutional use.
 
 ---
+
