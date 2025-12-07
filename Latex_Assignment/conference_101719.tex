@@ -1,0 +1,237 @@
+\documentclass[conference]{IEEEtran}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{adjustbox}
+\usepackage{geometry}
+\geometry{left=0.63in, right=0.63in, top=0.7in, bottom=0.85in}
+
+\title{Adaptive Relay Setting for Distribution System during Reconfiguration}
+
+\author{
+\IEEEauthorblockN{Tripti Gangwar}
+\IEEEauthorblockA{
+Department of Electrical Engineering\\
+National Institute of Technology\\
+Uttarakhand, India\\
+tripti.gangwar5@gmail.com}
+\and
+\IEEEauthorblockN{Dr. Saumendra Sarangi}
+\IEEEauthorblockA{
+Department of Electrical Engineering\\
+National Institute of Technology\\
+Uttarakhand, India\\
+usomsam@gmail.com}
+}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Reconfiguration of a distribution system is an approach to minimize the losses and improve the reliability of an electrical system. However, such modifications can cause relay maloperation. With the use of digital relay and advanced communication techniques, the settings of the relay can be changed which would enable them to respond to real time network conditions. We propose a scheme to prevent relay maloperation through current measurement in different branches and changing the time setting and plug setting of the relay. Using this method the relay coordination also improved. The approach was tested on a 33-bus radial distribution network for different types of fault, fault resistances and found to be correct.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Network Reconfiguration; Adaptive Protection; Overcurrent relay; Plug Setting
+\end{IEEEkeywords}
+
+\section{INTRODUCTION}
+Electrical power system is one of the most dynamic manmade system, which experiences multiple changes in the state frequently. Such variations have made the operation, control, and protection of the system difficult. However with an objective to provide quality power at a maximum profit, several strategies are followed to improve the performance of the system. Among its different sections, the distribution system is experiencing radical changes in structure due to the rapid growth of demand and incorporation of distributed energy resources (DERS). At times, reliable operation of the system demands reconfiguration of a distribution system using additional tie switches and such an approach is employed in the modern era to maintain the stability during abnormal operating condition \cite{ref1}. Relays which are set with a certain assumption about the operating condition face violation in setting as operating quantity at different location changes in accordance with the reconfiguration of the system. This may lead to maloperation of the relay and degradation of the system performance.
+
+Many challenges have been faced by distribution network related to losses, efficiency, variable loads, etc. due to the complexity of its operation and control. Network reconfiguration is one of the options for simplifying these issues \cite{ref2}. Reconfiguration is an approach where the status of the tie switches is altered from normally open to normally closed \cite{ref2}. In general, electrical networks are reconfigured for minimizing losses and reducing the overload on the system. However, these changes make the protection coordination complex. In the last decade, a significant research has been done to validate the effects of reconfiguration on the distribution network. The concept of network reconfiguration for loss reduction was first proposed by Merlin and Back \cite{ref1}. Reconfiguration has earned popularity with the emergence of renewable energy resources \cite{ref3}. Many algorithms were proposed for the integration of distributed generation into the reconfigured system \cite{ref2,ref3,ref4}. A fuzzy multi objective approach was proposed in \cite{ref5}, a convex model for online reconfiguration of distribution networks with maximum integration of distributed generation was introduced in \cite{ref6}. This altercation of the topology of the network may lead to downgrading the sensitivity of the relay and ultimately its maloperation. It has been observed in most of the cases; after reconfiguration, the fault current levels and the direction of power flow in the branches is changing \cite{ref7}. Therefore an adaptive setting of the relay is required for the restructured distribution network.
+
+The concept of adaptive relaying was introduced by Rockefeller \cite{ref8}. Adaptive protection is defined as "a protection philosophy which permits and seeks to make adjustments to various protection functions in order to make them more attuned to prevailing power system conditions." This implies the change of the relay settings in response to the variation in power system structure. The concept of adaptive relaying with the level of series compensation in the transmission line was proposed in \cite{ref9}. With the advancement in communication technology and digital relay, adaptive relaying has gained importance. Therefore, an adaptive setting can be applied for the reconfiguration of the distribution network \cite{ref10}. It is concluded in \cite{ref11} that after reconfiguration certain changes in the protection system are necessary. In, \cite{ref12} protective constraints are introduced to the reconfigured problem and genetic algorithm is used to find the optimal configuration. This paper proposes the adaptive setting of overcurrent relay considering its IDMT characteristic. Rated line current data was taken and the setting of the relay is decided in two steps - offline short circuit analysis is performed to calculate fault current and an algorithm is proposed to adapt the settings of the relay accordingly. This was tested on a 33-bus radial distribution network and the results were accurate. The proposed method is applicable for other systems as well.
+
+\section{PROBLEM FORMULATION}
+\subsection{DESCRIPTION OF SYSTEM}
+Several approaches are available for reconfiguration of a distribution system; many systems were studied for improvement in their performance. A 33-bus radial distribution system with 37 lines, 32 switches, and 5 tie lines is considered to observe the effect of reconfiguration on relay performance in this paper \cite{ref3} and the single line diagram of the system is provided in Fig.~\ref{fig:fig1}. The line and load data considered for the system are available in \cite{ref2}. The system is simulated in MATLAB/SIMULINK platform and by operating switches, the effects of reconfiguration are observed. As in practice, overcurrent relays are considered for the protection of distributed system which is set with plug setting of 150\% and has the Inverse definite minimum time (IDMT) characteristic.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\linewidth]{Fig-1.png}
+    \caption{The single line diagram of 33 bus radial distribution system.}
+    \label{fig:fig1}
+\end{figure}
+
+\subsection{PROBLEM DESCRIPTION}
+\subsubsection{Case I: Violation in Pick up setting of the Relay:}
+To test the performance of the overcurrent relays after reconfiguration, the test system is selected where the lines between buses 25-29, 33-18, 9-15, 8-21, 12-22 are kept open. During this period the current data of the lines at all the buses are recorded. For reconfiguration, all the switches are operated to connect the lines between the above- mentioned buses, and the current data are recorded. Both current data before and after reconfiguration are plotted in Fig.~\ref{fig:fig2}. From the figure, it is observed that after reconfiguration the line current at buses 19, 20, 21, 22, 23, 24 etc. has increased to more than two times. The plug setting before reconfiguration was 150\% of rated line current. After reconfiguration as the load current has increased which is more than set current will lead to maloperation of the relay. Such maloperation is observed at lines connected to buses 19, 20, 21, 22, 23, 24 and 25.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\linewidth]{Fig-2.png}
+    \caption{Line currents of 33 bus system before and after reconfiguration}
+    \label{fig:fig2}
+\end{figure}
+
+Therefore, the plug setting of the relay must be adapted after the reconfiguration to prevent the maloperation of the relay due to the variation in the line currents.
+
+\subsubsection{Case II: Violation in Relay Coordination}
+To improve the selectivity of the overcurrent relay the system is divided into primary and backup zones of protection. The time of operation of the relays in these zones should be coordinated to identify the fault in a particular section. The primary relay should operate first and the backup relay should operate when primary relay fails to operate. There must be a time difference between the operation of primary and back up relay called the coordination time interval (CTI) \cite{ref15}.It is normally between 0.2 to 0.5 seconds. CTI can be illustrated by (1).
+
+\begin{equation}
+t_{backup}-t_{primary} \ge CTI
+\label{eq:cti}
+\end{equation}
+
+Where $t_{backup}$ and $t_{primary}$ are the operating times of back up and primary relays.
+
+The time of operation $(t_{op})$ is calculated by taking the IDMT (Inverse Definite Minimum Time) characteristic of overcurrent relay as given in (2).
+
+\begin{equation}
+t_{op} = \frac{0.14 \times TMS}{PSM^{0.02}-1}
+\label{eq:idmt}
+\end{equation}
+
+Where TMS is time multiplier setting and PSM is plug setting multiplier of the relay. Overcurrent relay set for the radial system requires a different setting if the configuration changes. After reconfiguration, if the relay settings remained same then the coordination of the relays will be disturbed and this will lead to maloperation of the relay. To observe the effect of reconfiguration on the relay coordination, the test system was divided into different sections. The time of operation of the primary relay and backup relay calculated using (2) before reconfiguration and it was observed that the operation of the relays was coordinated. Time of operation of primary and back up relay calculated offline after reconfiguration using (2) and tabulated in Table~\ref{tab:table1}. It is clear from the Table~\ref{tab:table1} that the relays for the lines connected to busses 21, 9 and 22 operate before the primary relays of the lines connected to bus 9, 14 and 17 respectively. This infers the selectivity of the overcurrent relay is loosed. Similar maloperation of the relay was observed at buses 33, 25, 18 etc. After reconfiguration, it was observed that the time of operation of relays at the buses which were connected after reconfiguration was maloperated.
+
+\begin{table*}[!ht]
+\centering
+\caption{FAULT CURRENT AND TIME OF OPERATION OF RELAYS}
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{lcccccc}
+\toprule
+Relay connected to buses in Fig. 1 & $I_f$(A) Before & $t_{op}$(s) Before & $I_f$(A) After & $t_{op}$(s) After & Relay Maloperation \\
+\midrule
+Primary 9 & 1077 & 0.3489 & 1041 & 0.3543 & \\
+8 & 1077 & 0.4489 & 1041 & 0.4535 & 21 \\
+21 & -- & -- & 1104 & \textbf{0.3434} & \\
+Primary 14 & 750 & 0.427 & 623.7 & 0.4842 & \\
+13 & 750 & 0.627 & 623.7 & 0.7094 & 9 \\
+9 & -- & 0.3845 & 896.4 & -- & \\
+Primary 17 & 420 & 0.6301 & 398.9 & 0.7087 & \\
+18 & 420 & 0.8301 & 398.9 & 0.8717 & 22 \\
+22 & -- & 0.4493 & 695.5 & -- & \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\label{tab:table1}
+\end{table*}
+
+
+Relay maloperation observed in the above cases reveals that setting of the relays needs to be changed as per the changes in configuration to prevent the maloperation of the relay. This can be achieved using the data taken from all the buses and lines connected to all the buses. In this context, we have proposed an algorithm to improve the relay performance and its steps are provided in the next section.
+
+\section{PROPOSED METHOD}
+An adaptive protection algorithm is proposed for establishing protection coordination and adapting plug setting after reconfiguration. The input data to this algorithm is line currents data obtained in Fig.~\ref{fig:fig2} during normal loading condition and fault current data from the offline short circuit analysis. The result of the algorithm will be stored at the substation. Whenever reconfiguration of the system is done, the maloperation of the relays is checked. Data is transferred to all the relays of the system through the dedicated communication channel. The flow diagram of the proposed algorithm is given in Fig.~\ref{fig:fig3}. The steps of the proposed algorithm are as follows:
+
+Step 1: Before and after the reconfiguration data are collected.
+
+Step 2: Considering the fault current from short circuit analysis the setting is checked.
+
+Step 3: If the plug setting violated the adaptive setting is achieved using (3).
+
+Step 4: The updated setting is checked for time setting and coordination between the relays. During violation of the coordination, time setting is adapted as per (5).
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\linewidth]{Fig-3.png}
+    \caption{Algorithm for adaptive protection}
+    \label{fig:fig3}
+\end{figure}
+
+The data from all the buses are transferred to a central location with the help of communication channel and at the time of reconfiguration, the algorithm executes and checks the settings of the relay. According to the reconfigured system, the settings are updated and transferred from the substation to the relays of the corresponding section that is likely to maloperate during reconfiguration of the system. Adaptive setting required is classified in two categories (i) Adaptive plug setting (ii) Adaptive time setting. The setting can be changed as per the reconfiguration as given below.
+
+\subsection{Adaptive plug setting}
+As observed the current changes after reconfiguration the change in current is considered to adapt the plug setting of the relay after reconfiguration, it should be changed to
+
+\begin{equation}
+I_{set} = (I + \Delta I) \times 1.5
+\label{eq:plug}
+\end{equation}
+
+where $I$ is rated line current and $\Delta I$ is the change in line current after reconfiguration referred to the secondary side of the current transformer.
+
+\subsection{Adaptive Time Setting}
+As discussed in the preceding section the coordination between the relays may be lost after the reconfiguration of the system, which demands the change in time setting of the backup relays. This is achieved by computing the change in time of operation required to maintain the coordination by calculating the change in the TMS of the relay after reconfiguration which is given in (4),
+
+\begin{equation}
+\Delta t_{op} = \frac{0.14 \times \Delta TMS}{PSM^{0.02}-1}
+\label{eq:deltat}
+\end{equation}
+
+where $\Delta TMS$ is the change to be done in the time multiplier setting of the backup relay after reconfiguration.
+
+As observed the plug setting violated at some buses, in that case, the coordination between the relays can also be changed by varying the PSM of the backup relay in accordance with line current after the reconfiguration. New time multiplier setting of the backup relay can be computed using (5)
+
+\begin{equation}
+TMS = \frac{\Delta t_{op}}{0.14}\left[\left(\frac{\Delta I + I_f}{PS}\right)^{0.02}-1\right]
+\label{eq:tms}
+\end{equation}
+
+Where $I_{f}$ is the maximum fault current obtained from symmetrical fault calculation, $\Delta I$ is the change in line current due to reconfiguration, PS is the plug setting of the relay.
+
+Implementation of the proposed scheme demands communication channel and automated substation. With the advancement in communication systems, IEDs (Intelligent Electronic Devices) are being used for transferring the data in the distribution network, the relay can achieve clearance of the fault i.e. within 0.2 to 0.3 seconds. The backup protection can be accelerated using this technique. However, if the communication technique fails, we can adapt the setting of the relay by calculating pre-fault current and load current before and after reconfiguration and set the relay according to the calculated value of current.
+
+\section{RESULTS AND DISCUSSIONS}
+The test system as shown in the Fig.~\ref{fig:fig1} is tested for different cases of reconfigurations and different types of operating conditions. Out of this few cases are presented in this section. In the first case, adaptive plug setting case is presented. In the second case, adaptive time setting is provided. In the end, a case is selected where both time setting and plug setting is done. For all the cases the 33 bus radial distribution system is simulated in MATLAB/SIMULINK and relay data is taken at a frequency of 1 kHz.
+
+\subsection{Adaptive plug setting for a relay after reconfiguration}
+Plug setting of overcurrent relay before reconfiguration was kept 150\% of the full load current. Before the reconfiguration, at normal loading, the lines were connected radially. To apply the reconfiguration, the lines between buses 9-15, 21-8, 22-12, 33-18 and 25-29 were connected. From the simulation in MATLAB/SIMULINK, it is clear that the line currents values at some of the buses have exceeded the plug setting of the relay. The plug setting at these buses will violate and the trip signal will be generated. Several cases were observed in the test system for plug setting violation. For example at buses 19, 20, 21, 22, 23 and 24, the pre-fault line currents are increased approximately to two times. The line current between buses 20-21 is plotted in Fig.~\ref{fig:fig4} which reveals that during reconfiguration at 1 sec the current in the line has increased. As this current is more than the pickup setting of the overcurrent relay, a trip signal is generated as shown in Fig.~\ref{fig:fig4}, which is a maloperation of the relay. So the pickup setting of a relay should be changed as per the maximum line current obtained after reconfiguration of the system.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\linewidth]{Fig-4.png}
+\caption{Line current and maloperation of trip signal}
+\label{fig:fig4}
+\end{figure}
+
+After reconfiguration, plug setting is computed using (\ref{eq:plug}) and changed setting and line current is plotted in Fig.~\ref{fig:fig5}. As the current is below the set value no trip signal is generated which is the correct operation of the relay. This reveals that using adaptive technique the relay operation is enhanced.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\linewidth]{Fig-5.png}
+\caption{Branch current and trip signal after applying adaptive protection to the reconfigured system}
+\label{fig:fig5}
+\end{figure}
+
+\subsection{Adaptive Time Setting of Relay After Reconfiguration}
+For improving the selectivity of the overcurrent relay, the time of operation of back up and primary relay should be coordinated. Before reconfiguration at normal loading condition, this coordination was accurate. From the simulation in MATLAB/SIMULINK it has been observed, the fault current contribution after reconfiguration could cause the relay in the reconfigured branch to operate before the primary relay. In the previous section, three of these cases are described where the relays for the lines connected to buses 21, 9 and 22 operate before the primary relays of the lines connected to buses 9, 14 and 17 respectively.
+
+To establish coordination among relays the TMS of each relay is computed so that every relay provides backup protection with a sufficient time interval (0.2 to 0.5 secs). To prevent maloperation in the coordination of relays the adaptive setting of time of operation is calculated using (\ref{eq:tms}) for the buses whose coordination is disturbed. The results for one of the cases are shown in Table~\ref{tab:table2}. After adaptive setting, it is observed that the time of operation of the relay at bus 21 has been coordinated with other relays. Similarly, the operation of other buses can be enhanced with the appropriate TMS.
+
+\begin{table}[!ht]
+\centering
+\caption{TIME OF OPERATION OF RELAY AFTER ADAPTIVE SETTING}
+\resizebox{\columnwidth}{!}{
+\begin{tabular}{lcc}
+\toprule
+Relay connected to buses in Fig. 1 & $t_{op}$(s) after reconfiguration & $t_{op}$(s) after adaptive setting \\
+\midrule
+9 & 0.3543 & 0.2932 \\
+8 & 0.4535 & 0.4932 \\
+21 & 0.3434 & 0.5540 \\
+\bottomrule
+\end{tabular}
+}
+\label{tab:table2}
+\end{table}
+
+\subsection{Adaptive time setting with variations in plug setting}
+In the first case, the plug setting of some of the relays in the test system is violated, it is possible these relays may also suffer coordination problem. Before reconfiguration the line current between buses 21-22 was 6.118 A, after reconfiguration, it is changed to 30.73 A. Both TMS and plug setting have to be changed to establish coordination and enhance the operation of the protection system. The desired setting of TMS for coordinating the relays by varying plug setting is obtained using (\ref{eq:tms}). The results obtained for one of the relays for which plug setting has to be changed is given in Table~\ref{tab:table3}.
+
+\begin{table}[!ht]
+\centering
+\caption{ADAPTIVE TIME SETTING WITH VARIATION IN PLUG SETTING}
+\resizebox{\columnwidth}{!}{
+\begin{tabular}{lccc}
+\toprule
+Relay connected to buses in Fig. 1 & Plug setting after reconfiguration (A) & TMS after reconfiguration & Time of operation (s) \\
+\midrule
+22 & 46.095 & 0.117 & 0.1872 \\
+\bottomrule
+\end{tabular}
+}
+\label{tab:table3}
+\end{table}
+
+\section{CONCLUSION}
+Reconfiguration in the distribution system surely added benefits, at the same time degrades the relay performance. Therefore, by exploiting the adaptability of a relay and with the help of IDMT characteristics of overcurrent relay we have proposed an algorithm for mitigating the effects of reconfiguration on the protection system. Pre-fault current data are applied for the adaptive setting of the relay. Such a setting is obtained by doing offline fault analysis and then updating the relay setting according to the reconfigured data. The adaptive setting is updated on the relays by the dedicated communication channel. The scheme we have proposed is comparatively economical; we have tested it on a 33 bus radial distribution system and is valid for other distribution systems also.
+
+\bibliographystyle{IEEEtran}
+\nocite{*}
+\bibliography{reference}
+
+\end{document}
